@@ -1,0 +1,279 @@
+:root {
+    --primary-color: #ee4d2d;
+    --primary-color-rgba: rgba(238, 77, 45,0.08);
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #dbdbdb;
+    --star-gold: #ffce3e;
+
+    --header-height: 120px;
+    --header__navbar-height: 40px;
+    --header-with-search-height: calc( var(--header-height) - var(--header__navbar-height) );
+    --header__sort-bar: 46px;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* responsive */
+/* .grid {
+    width: 1200px;  
+    max-width: 100%; 
+    /* với màn hình lớn hơn 1200px thì chiều rộng nó chiếm chỉ tối đa 1200px 
+    ,nếu màn nhỏ hơn 1200px thì nó tự tương thích */
+   /* margin: 0 auto;  căn giữa khối này khi nằm trong khối khác */
+/* }  */
+
+/* .grid__full-width {
+    width: 100%;
+} */
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+    /* elements in the here is in line row */
+}
+
+/* Test */
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3333%;
+}
+
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+/* animation */
+@keyframes FadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes Growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal__body {
+    --growth-from: 0.7;
+    --growth-to: 1;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    animation: Growth linear 0.1s;
+}
+
+.btn {
+    min-width: 124px;
+    height: 36px;
+    background-color: var(--white-color);
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6rem;
+}
+
+.btn.btn--normal:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn.btn--size-s {
+    height: 32px;
+    font-size: 1.2rem;
+    padding: 0 8px;
+}
+
+.btn.btn--primary {
+    background-color: var(--primary-color);
+}
+
+.auth-form__socials-icon {
+    font-size: 2rem;
+}
+
+.auth-form__socials--facebook {
+    color: var(--white-color);
+    background-color: #1877f2;
+}
+
+.auth-form__socials-title{
+    margin: 0 24px;
+}
+
+.auth-form__socials--google {
+    background-color: var(--white-color);
+    color: #666;
+}
+
+/* selection  */
+.select-input {
+    position: relative;
+    min-width: 200px;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgb(225, 225, 225);
+}
+
+.select-input:hover .select-input__list {
+    display: block;
+}
+
+
+.select-input__label {
+    font-size: 1.4rem;
+}
+
+.select-input__icon {
+    font-size: 1.4rem;
+    color: #5e5e5e;
+    position: relative;
+    top: 1px;
+}
+
+
+/* list option  */
+.select-input__list {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 28px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    list-style: none;
+    padding: 12px 12px;
+    display: none;
+}
+
+.select-input__list::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 20px;
+    top: -10px;
+    right: 0;
+    left: 0;
+}
+
+
+.select-input__link {
+    display: block;
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    padding: 6px 0;
+}
+
+.select-input__link:hover {
+    color: var(--primary-color);
+}
+
+/* Pagination  */
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+  
+}
+
+.home__product--pagination {
+    margin: 48px 0 0px 0;
+}
+
+.pagination-item {
+    margin: 0 15px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.pagination-item__icon {
+    font-weight: 300;
+}
+
+.pagination-item__link {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #989898;
+    display: flex;
+    min-width: 40px;
+    min-height: 30px;
+    justify-content: center;    /*  căn giữa chữ. C1: dùng display: Flex rồi justify và align  */
+    align-items: center;
+    
+    /* cách 2 : dùng 
+    tex-align: center và line-height : bằng min-height  */
+}
+
+.pagination-item--active .pagination-item__link {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.pagination-item--active:hover .pagination-item__link {
+    background-color: #eb6d54;
+}
+
+
+
+
+
